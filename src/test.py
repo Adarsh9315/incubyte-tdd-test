@@ -27,3 +27,9 @@ def test_many_numbers_return_sum():
 def test_newline_as_delimiter():
     sc = StringCalculator()
     assert sc.add("1\n2,3") == 6
+
+
+# Step 6: custom single-character delimiter
+def test_custom_delimiter():
+    sc = StringCalculator()
+    assert sc.add("//;\n1;2") == 3
