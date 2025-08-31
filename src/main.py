@@ -13,4 +13,11 @@ class StringCalculator:
         
         numbers = numbers.replace("\n", delimiter)
         parts = numbers.split(delimiter)
-        return sum(int(p) for p in parts if p)
+        values = [int(p) for p in parts if p]
+
+        # negatives not allowed
+        negatives = [v for v in values if v < 0]
+        if negatives:
+            raise ValueError(f"Negatives not allowed: {negatives}")
+
+        return sum(values)
