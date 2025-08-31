@@ -6,6 +6,7 @@ class StringCalculator:
         
         # Step 2: return the number itself if only one
         # Step 3: step 2 now extended to handle two numbers using split
+        # Step 4: This will also work for Unknown count of numbers
 
         parts = numbers.split(",")
         if len(parts) == 1:

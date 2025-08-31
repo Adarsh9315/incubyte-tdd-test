@@ -16,3 +16,9 @@ def test_single_number_returns_value():
 def test_two_numbers_return_sum():
     sc = StringCalculator()
     assert sc.add("1,2") == 3
+
+
+# Step 4: unknown amount of numbers
+def test_many_numbers_return_sum():
+    sc = StringCalculator()
+    assert sc.add("1,2,3,4,5") == 15
