@@ -5,4 +5,9 @@ class StringCalculator:
             return 0
         
         # Step 2: return the number itself if only one
-        return int(numbers)
+        # Step 3: step 2 now extended to handle two numbers using split
+
+        parts = numbers.split(",")
+        if len(parts) == 1:
+            return int(parts[0])
+        return sum(int(p) for p in parts)

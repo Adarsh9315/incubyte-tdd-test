@@ -10,3 +10,9 @@ def test_empty_string_returns_0():
 def test_single_number_returns_value():
     sc = StringCalculator()
     assert sc.add("1") == 1
+
+
+# Step 3: two numbers separated by comma
+def test_two_numbers_return_sum():
+    sc = StringCalculator()
+    assert sc.add("1,2") == 3
