@@ -59,3 +59,10 @@ def test_multiple_delimiters():
 def test_multiple_multi_char_delimiters():
     sc = StringCalculator()
     assert sc.add("//[**][%%]\n1**2%%3") == 6
+
+# Step 12: get_called_count
+def test_get_called_count_increments():
+    sc = StringCalculator()
+    sc.add("1")
+    sc.add("2,3")
+    assert sc.get_called_count() == 2
