@@ -6,18 +6,15 @@ def test_empty_string_returns_0():
     sc = StringCalculator()
     assert sc.add("") == 0
 
-
 # Step 2: single number returns its value
 def test_single_number_returns_value():
     sc = StringCalculator()
     assert sc.add("1") == 1
 
-
 # Step 3: two numbers separated by comma
 def test_two_numbers_return_sum():
     sc = StringCalculator()
     assert sc.add("1,2") == 3
-
 
 # Step 4: unknown amount of numbers
 def test_many_numbers_return_sum():
@@ -28,7 +25,6 @@ def test_many_numbers_return_sum():
 def test_newline_as_delimiter():
     sc = StringCalculator()
     assert sc.add("1\n2,3") == 6
-
 
 # Step 6: custom single-character delimiter
 def test_custom_delimiter():
@@ -42,3 +38,9 @@ def test_negatives_raise_exception():
         sc.add("1,-2,3")
     assert "negatives not allowed" in str(err.value).lower()
     assert "-2" in str(err.value)
+
+# Step 8: ignore numbers bigger than 1000
+def test_ignore_bigger_than_1000():
+    sc = StringCalculator()
+    assert sc.add("2,1001") == 2
+    assert sc.add("1000,1") == 1001

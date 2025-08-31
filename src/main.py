@@ -20,4 +20,6 @@ class StringCalculator:
         if negatives:
             raise ValueError(f"Negatives not allowed: {negatives}")
 
+        # Ignore numbers > 1000
+        values = [v for v in values if v <= 1000]
         return sum(values)
