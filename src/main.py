@@ -8,6 +8,9 @@ class StringCalculator:
         # Step 3: step 2 now extended to handle two numbers using split
         # Step 4: This will also work for Unknown count of numbers
 
+        # Step 5: Treat newline as another delimiter
+        numbers = numbers.replace("\n", ",")
+        
         parts = numbers.split(",")
         if len(parts) == 1:
             return int(parts[0])

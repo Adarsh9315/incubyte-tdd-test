@@ -22,3 +22,8 @@ def test_two_numbers_return_sum():
 def test_many_numbers_return_sum():
     sc = StringCalculator()
     assert sc.add("1,2,3,4,5") == 15
+
+# Step 5: support newline as delimiter
+def test_newline_as_delimiter():
+    sc = StringCalculator()
+    assert sc.add("1\n2,3") == 6
