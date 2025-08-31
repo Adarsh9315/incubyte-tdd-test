@@ -44,3 +44,18 @@ def test_ignore_bigger_than_1000():
     sc = StringCalculator()
     assert sc.add("2,1001") == 2
     assert sc.add("1000,1") == 1001
+
+# Step 9: delimiters of any length
+def test_multi_char_delimiter():
+    sc = StringCalculator()
+    assert sc.add("//[***]\n1***2***3") == 6
+
+# Step 10: multiple delimiters
+def test_multiple_delimiters():
+    sc = StringCalculator()
+    assert sc.add("//[*][%]\n1*2%3") == 6
+
+# Step 11: multiple multi-char delimiters
+def test_multiple_multi_char_delimiters():
+    sc = StringCalculator()
+    assert sc.add("//[**][%%]\n1**2%%3") == 6
